@@ -4,6 +4,7 @@
 [![Total Downloads](https://img.shields.io/packagist/dt/fyennyi/async-cache-bridge-symfony.svg?label=Downloads&logo=packagist)](https://packagist.org/packages/fyennyi/async-cache-bridge-symfony)
 [![License](https://img.shields.io/packagist/l/fyennyi/async-cache-bridge-symfony.svg?label=Licence&logo=open-source-initiative)](https://packagist.org/packages/fyennyi/async-cache-bridge-symfony)
 [![Tests](https://img.shields.io/github/actions/workflow/status/Fyennyi/async-cache-bridge-symfony/phpunit.yml?label=Tests&logo=github)](https://github.com/Fyennyi/async-cache-bridge-symfony/actions/workflows/phpunit.yml)
+[![Test Coverage](https://img.shields.io/codecov/c/github/Fyennyi/async-cache-bridge-symfony?label=Test%20Coverage&logo=codecov)](https://app.codecov.io/gh/Fyennyi/async-cache-bridge-symfony)
 
 This is a **Symfony Bridge** for the [Async Cache PHP](https://github.com/Fyennyi/async-cache-php) library. It integrates the asynchronous caching manager directly into your Symfony application, automatically wiring it with the default Symfony Cache, Lock, and Logger components.
 
