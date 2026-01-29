@@ -14,6 +14,9 @@
         "fyennyi/async-cache-php": "dev-main",
         "symfony/framework-bundle": "^6.4"
     },
+    "require-dev": {
+        "friendsofphp/php-cs-fixer": "^3.93"
+    },
     "autoload": {
         "psr-4": {
             "Fyennyi\\AsyncCache\\Bridge\\Symfony\\": "src/Bridge/Symfony"
