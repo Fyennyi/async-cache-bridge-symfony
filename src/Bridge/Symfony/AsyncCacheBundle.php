@@ -1,4 +1,5 @@
 <?php
+
 namespace Fyennyi\AsyncCache\Bridge\Symfony;
 
 class AsyncCacheBundle
