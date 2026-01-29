@@ -11,6 +11,11 @@ use Symfony\Component\HttpKernel\Bundle\Bundle;
  */
 class AsyncCacheBundle extends Bundle
 {
+    /**
+     * Builds the bundle.
+     *
+     * @param ContainerBuilder $container The container builder
+     */
     public function build(ContainerBuilder $container) : void
     {
         parent::build($container);
