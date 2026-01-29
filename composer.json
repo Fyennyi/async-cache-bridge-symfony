@@ -19,7 +19,7 @@
     },
     "autoload": {
         "psr-4": {
-            "Fyennyi\\AsyncCache\\Bridge\\Symfony\\": "src/Bridge/Symfony"
+            "Fyennyi\\AsyncCache\\Bridge\\Symfony\\": "src/"
         }
     },
     "minimum-stability": "stable",
