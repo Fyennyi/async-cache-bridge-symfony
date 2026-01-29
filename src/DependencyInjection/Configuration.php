@@ -7,16 +7,21 @@ use Symfony\Component\Config\Definition\ConfigurationInterface;
 
 class Configuration implements ConfigurationInterface
 {
+    /**
+     * @return TreeBuilder The configuration tree builder
+     */
     public function getConfigTreeBuilder() : TreeBuilder
     {
-        $treeBuilder = new TreeBuilder('async_cache');
-        $rootNode = method_exists($treeBuilder, 'getRootNode') ? $treeBuilder->getRootNode() : $treeBuilder->root('async_cache');
+        $tree_builder = new TreeBuilder('async_cache');
+        $root_node = $tree_builder->getRootNode();
 
-        $rootNode
+        $root_node
             ->children()
-                ->scalarNode('default_strategy')->defaultValue('strict')->end()
+                ->scalarNode('default_strategy')
+                    ->defaultValue('strict')
+                ->end()
             ->end();
 
-        return $treeBuilder;
+        return $tree_builder;
     }
 }
