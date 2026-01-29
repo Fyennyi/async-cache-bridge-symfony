@@ -1,6 +1,6 @@
 <?php
 
-namespace Fyennyi\AsyncCache\Bridge\Symfony\Tests\Unit;
+namespace Tests\Unit;
 
 use Fyennyi\AsyncCache\Bridge\Symfony\AsyncCacheBundle;
 use Fyennyi\AsyncCache\Bridge\Symfony\DependencyInjection\Compiler\MiddlewarePass;

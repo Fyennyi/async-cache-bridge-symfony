@@ -1,6 +1,6 @@
 <?php
 
-namespace Fyennyi\AsyncCache\Bridge\Symfony\Tests\Integration;
+namespace Tests\Integration;
 
 use Fyennyi\AsyncCache\AsyncCacheManager;
 use Fyennyi\AsyncCache\Bridge\Symfony\AsyncCacheBundle;

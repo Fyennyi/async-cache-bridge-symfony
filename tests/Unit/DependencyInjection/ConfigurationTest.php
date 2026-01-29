@@ -1,6 +1,6 @@
 <?php
 
-namespace Fyennyi\AsyncCache\Bridge\Symfony\Tests\Unit\DependencyInjection;
+namespace Tests\Unit\DependencyInjection;
 
 use Fyennyi\AsyncCache\Bridge\Symfony\DependencyInjection\Configuration;
 use PHPUnit\Framework\TestCase;
