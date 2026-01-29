@@ -7,8 +7,16 @@ use Symfony\Component\DependencyInjection\Compiler\CompilerPassInterface;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\DependencyInjection\Reference;
 
+/**
+ * Compiler pass to register tagged middleware services.
+ */
 class MiddlewarePass implements CompilerPassInterface
 {
+    /**
+     * Processes the container to find and register tagged middleware.
+     *
+     * @param ContainerBuilder $container The container builder
+     */
     public function process(ContainerBuilder $container) : void
     {
         if (! $container->has(AsyncCacheManager::class)) {
