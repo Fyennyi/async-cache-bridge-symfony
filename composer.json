@@ -2,7 +2,7 @@
   "name": "fyennyi/async-cache-bridge-symfony",
   "type": "library",
   "description": "Symfony bridge for Fyennyi AsyncCache.",
-  "license": "MIT",
+  "license": "LicenseRef-CSSM-Unlimited-2.0",
   "autoload": {
     "psr-4": {
       "Fyennyi\\AsyncCache\\Bridge\\Symfony\\": "src/Bridge/Symfony"
