@@ -5,9 +5,8 @@ namespace Fyennyi\AsyncCache\Bridge\Symfony\DependencyInjection;
 use Fyennyi\AsyncCache\AsyncCacheManager;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\DependencyInjection\Definition;
-use Symfony\Component\DependencyInjection\Reference;
 use Symfony\Component\DependencyInjection\Extension\Extension;
-use Fyennyi\AsyncCache\Bridge\Symfony\DependencyInjection\Configuration;
+use Symfony\Component\DependencyInjection\Reference;
 
 class AsyncCacheExtension extends Extension
 {
