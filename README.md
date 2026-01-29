@@ -87,6 +87,16 @@ Since this bridge automatically wires Symfony components, ensure your environmen
 composer require symfony/lock
 ```
 
+## Contributing
+
+Contributions are welcome! Please follow these steps:
+
+1. Fork the project.
+2. Create your feature branch (`git checkout -b feature/AmazingFeature`).
+3. Commit your changes (`git commit -m 'Add some AmazingFeature'`).
+4. Push to the branch (`git push origin feature/AmazingFeature`).
+5. Open a Pull Request.
+
 ## License
 
 This library is licensed under the CSSM Unlimited License v2.0 (CSSM-ULv2). See the [LICENSE](LICENSE) file for details.
