@@ -9,7 +9,7 @@ use Symfony\Component\DependencyInjection\ContainerBuilder;
 
 class AsyncCacheBundleTest extends TestCase
 {
-    public function testBuildRegistersMiddlewarePass(): void
+    public function testBuildRegistersMiddlewarePass() : void
     {
         $bundle = new AsyncCacheBundle();
         $container = $this->createMock(ContainerBuilder::class);

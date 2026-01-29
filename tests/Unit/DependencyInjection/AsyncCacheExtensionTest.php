@@ -10,7 +10,7 @@ use Symfony\Component\DependencyInjection\Reference;
 
 class AsyncCacheExtensionTest extends TestCase
 {
-    public function testLoadRegistersServices(): void
+    public function testLoadRegistersServices() : void
     {
         $extension = new AsyncCacheExtension();
         $container = new ContainerBuilder();
@@ -25,7 +25,7 @@ class AsyncCacheExtensionTest extends TestCase
         $arguments = $definition->getArguments();
         $this->assertArrayHasKey('$cache_adapter', $arguments);
         $this->assertEquals(new Reference('cache.app'), $arguments['$cache_adapter']);
-        
+
         $this->assertArrayHasKey('$logger', $arguments);
         $this->assertEquals(new Reference('logger'), $arguments['$logger']);
     }

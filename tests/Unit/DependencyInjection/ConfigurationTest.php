@@ -8,7 +8,7 @@ use Symfony\Component\Config\Definition\Processor;
 
 class ConfigurationTest extends TestCase
 {
-    public function testDefaultConfiguration(): void
+    public function testDefaultConfiguration() : void
     {
         $configuration = new Configuration();
         $processor = new Processor();
@@ -20,7 +20,7 @@ class ConfigurationTest extends TestCase
         ], $config);
     }
 
-    public function testCustomConfiguration(): void
+    public function testCustomConfiguration() : void
     {
         $configuration = new Configuration();
         $processor = new Processor();

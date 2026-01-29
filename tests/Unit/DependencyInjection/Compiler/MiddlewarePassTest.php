@@ -11,7 +11,7 @@ use Symfony\Component\DependencyInjection\Reference;
 
 class MiddlewarePassTest extends TestCase
 {
-    public function testProcessRegistersMiddlewares(): void
+    public function testProcessRegistersMiddlewares() : void
     {
         $container = new ContainerBuilder();
         $managerDefinition = new Definition(AsyncCacheManager::class);
@@ -26,13 +26,13 @@ class MiddlewarePassTest extends TestCase
 
         $arguments = $managerDefinition->getArguments();
         $this->assertArrayHasKey('$middlewares', $arguments);
-        
+
         $middlewares = $arguments['$middlewares'];
         $this->assertCount(1, $middlewares);
         $this->assertEquals(new Reference('my_middleware'), $middlewares[0]);
     }
 
-    public function testProcessDoesNothingIfManagerMissing(): void
+    public function testProcessDoesNothingIfManagerMissing() : void
     {
         $container = new ContainerBuilder();
         $pass = new MiddlewarePass();
