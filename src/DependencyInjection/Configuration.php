@@ -5,6 +5,9 @@ namespace Fyennyi\AsyncCache\Bridge\Symfony\DependencyInjection;
 use Symfony\Component\Config\Definition\Builder\TreeBuilder;
 use Symfony\Component\Config\Definition\ConfigurationInterface;
 
+/**
+ * Configuration tree for the AsyncCacheBundle.
+ */
 class Configuration implements ConfigurationInterface
 {
     /**
