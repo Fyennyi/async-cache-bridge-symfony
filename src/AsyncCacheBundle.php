@@ -2,13 +2,9 @@
 
 namespace Fyennyi\AsyncCache\Bridge\Symfony;
 
-class AsyncCacheBundle
-{
-    public function getContainerExtension()
-    {
-        if (class_exists('Fyennyi\\AsyncCache\\Bridge\\Symfony\\DependencyInjection\\AsyncCacheExtension')) {
-            return new \Fyennyi\AsyncCache\Bridge\Symfony\DependencyInjection\AsyncCacheExtension();
-        }
-        return null;
-    }
-}
+use Symfony\Component\HttpKernel\Bundle\Bundle;
+
+/**
+ * Symfony Bundle for AsyncCache integration.
+ */
+class AsyncCacheBundle extends Bundle {}
