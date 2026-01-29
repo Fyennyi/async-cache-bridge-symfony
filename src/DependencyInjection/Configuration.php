@@ -11,7 +11,7 @@ use Symfony\Component\Config\Definition\ConfigurationInterface;
 class Configuration implements ConfigurationInterface
 {
     /**
-     * @return TreeBuilder The configuration tree builder
+     * @return TreeBuilder<'array'> The configuration tree builder
      */
     public function getConfigTreeBuilder() : TreeBuilder
     {

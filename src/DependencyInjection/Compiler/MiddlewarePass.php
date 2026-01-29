@@ -29,6 +29,7 @@ class MiddlewarePass implements CompilerPassInterface
         $middlewares = [];
         foreach ($taggedServices as $id => $tags) {
             foreach ($tags as $attributes) {
+                /** @var array{priority?: int} $attributes */
                 $priority = $attributes['priority'] ?? 0;
                 $middlewares[$priority][] = new Reference($id);
             }

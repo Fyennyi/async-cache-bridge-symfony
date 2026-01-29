@@ -16,8 +16,8 @@ class AsyncCacheExtension extends Extension
     /**
      * Loads the configuration and registers the AsyncCacheManager service.
      *
-     * @param array            $configs   The configuration array
-     * @param ContainerBuilder $container The container builder
+     * @param array<array-key, mixed> $configs   The configuration array
+     * @param ContainerBuilder        $container The container builder
      */
     public function load(array $configs, ContainerBuilder $container) : void
     {
