@@ -72,7 +72,7 @@ class WeatherService
             new CacheOptions(ttl: 300)
         );
     }
-    
+
     private function fetchFromApi(string $city) { /* ... */ }
 }
 ```
