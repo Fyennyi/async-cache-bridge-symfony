@@ -26,6 +26,7 @@
 namespace Fyennyi\AsyncCache\Bridge\Symfony\DependencyInjection;
 
 use Fyennyi\AsyncCache\AsyncCacheManager;
+use Fyennyi\AsyncCache\Config\AsyncCacheConfig;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\DependencyInjection\Definition;
 use Symfony\Component\DependencyInjection\Extension\Extension;
@@ -47,15 +48,21 @@ class AsyncCacheExtension extends Extension
         $configuration = new Configuration();
         $config = $this->processConfiguration($configuration, $configs);
 
-        $definition = new Definition(AsyncCacheManager::class);
-
-        $definition->setArguments([
+        // Register AsyncCacheConfig
+        $configDefinition = new Definition(AsyncCacheConfig::class);
+        $configDefinition->setArguments([
             '$cache_adapter' => new Reference('cache.app'),
             '$logger'        => new Reference('logger'),
             '$lock_factory'  => new Reference('lock.factory'),
             '$dispatcher'    => new Reference('event_dispatcher'),
         ]);
+        $container->setDefinition('async_cache.config', $configDefinition);
 
+        // Register AsyncCacheManager
+        $definition = new Definition(AsyncCacheManager::class);
+        $definition->setArguments([
+            '$config' => new Reference('async_cache.config'),
+        ]);
         $definition->setPublic(true);
         $container->setDefinition(AsyncCacheManager::class, $definition);
     }
