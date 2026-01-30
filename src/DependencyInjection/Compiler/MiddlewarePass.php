@@ -25,7 +25,6 @@
 
 namespace Fyennyi\AsyncCache\Bridge\Symfony\DependencyInjection\Compiler;
 
-use Fyennyi\AsyncCache\AsyncCacheManager;
 use Symfony\Component\DependencyInjection\Compiler\CompilerPassInterface;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\DependencyInjection\Reference;
@@ -42,11 +41,11 @@ class MiddlewarePass implements CompilerPassInterface
      */
     public function process(ContainerBuilder $container) : void
     {
-        if (! $container->has(AsyncCacheManager::class)) {
+        if (! $container->has('async_cache.config')) {
             return;
         }
 
-        $definition = $container->findDefinition(AsyncCacheManager::class);
+        $definition = $container->findDefinition('async_cache.config');
         $taggedServices = $container->findTaggedServiceIds('fyennyi.async_cache.middleware');
 
         $middlewares = [];
