@@ -4,6 +4,7 @@ namespace Tests\Unit\DependencyInjection\Compiler;
 
 use Fyennyi\AsyncCache\AsyncCacheManager;
 use Fyennyi\AsyncCache\Bridge\Symfony\DependencyInjection\Compiler\MiddlewarePass;
+use Fyennyi\AsyncCache\Config\AsyncCacheConfig;
 use PHPUnit\Framework\TestCase;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\DependencyInjection\Definition;
@@ -14,6 +15,10 @@ class MiddlewarePassTest extends TestCase
     public function testProcessRegistersMiddlewares() : void
     {
         $container = new ContainerBuilder();
+
+        $configDefinition = new Definition(AsyncCacheConfig::class);
+        $container->setDefinition('async_cache.config', $configDefinition);
+
         $managerDefinition = new Definition(AsyncCacheManager::class);
         $container->setDefinition(AsyncCacheManager::class, $managerDefinition);
 
@@ -24,7 +29,7 @@ class MiddlewarePassTest extends TestCase
         $pass = new MiddlewarePass();
         $pass->process($container);
 
-        $arguments = $managerDefinition->getArguments();
+        $arguments = $configDefinition->getArguments();
         $this->assertArrayHasKey('$middlewares', $arguments);
 
         $middlewares = $arguments['$middlewares'];
@@ -39,6 +44,6 @@ class MiddlewarePassTest extends TestCase
 
         $pass->process($container);
 
-        $this->assertFalse($container->hasDefinition(AsyncCacheManager::class));
+        $this->assertFalse($container->hasDefinition('async_cache.config'));
     }
 }
